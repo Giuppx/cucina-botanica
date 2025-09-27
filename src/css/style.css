@@ -348,7 +348,6 @@ header>nav>a>img {
 /* tips and curiosities section */
 
 #tips-curiosities-section {
-    display: none;
     font-family: var(--font-primary);
     background-color: var(--bg-primary);
     padding: 20px;
@@ -384,8 +383,8 @@ header>nav>a>img {
 }
 
 .tips-curiosities-card img {
-    width: 280px;
-    height: 280px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
@@ -750,6 +749,12 @@ footer>.icon>ul>li>a>img {
         left: 0;
     }
 
+    /* tips  */
+
+    .tips-curiosities-container-main {
+        flex-direction: column;
+    }
+
 
     /* news letter */
 
@@ -781,6 +786,7 @@ footer>.icon>ul>li>a>img {
 
     footer {
         flex-direction: column;
+        font-size: 1rem;
     }
 
     footer>div.links {
@@ -806,9 +812,9 @@ footer>.icon>ul>li>a>img {
 
     header>nav>a {
         display: inline-block;
-        top: 0;
+        top: 10%;
         left: 30%;
-        height: 3rem;
+        height: 2rem;
         width: 50%;
         padding: 0;
     }
@@ -870,7 +876,6 @@ footer>.icon>ul>li>a>img {
     }
 
     .recipes-main-card {
-        width: 85%;
         font-size: 1rem;
     }
 
@@ -887,6 +892,12 @@ footer>.icon>ul>li>a>img {
     /* book */
     .books-section::before {
         left: -5%;
+    }
+
+    /* tips  */
+
+    .tips-curiosities-container-main {
+        flex-direction: column;
     }
 
 
