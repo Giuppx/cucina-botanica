@@ -22,16 +22,20 @@
     box-sizing: border-box;
 }
 
+
 body {
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 /* heder */
 
 header[id="main-header"] {
     position: fixed;
-    width: 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;
     font-family: var(--font-primary);
     background-color: var(--bg-primary);
     padding: 24px 32px;
@@ -100,25 +104,23 @@ header>nav>a>img {
 
 #hero-section {
     background-color: var(--bg-primary);
+    margin-top: 5.2rem;
 }
 
 #hero-title-social {
     position: relative;
-    background-image: url("../assets/img/hero-img.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;
+    background: url("../assets/img/hero-img.jpg") center bottom 100%/cover no-repeat;
     font-family: var(--font-primary);
-    height: 100vh;
+    height: 88vh;
 }
 
 #hero-title-social>h1 {
     position: absolute;
-    top: 68%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     color: var(--color-tx-primary);
-    font-size: 68px;
+    font-size: 3rem;
     font-weight: 100;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     margin: 0;
@@ -132,10 +134,9 @@ header>nav>a>img {
 
 #hero-title-social>ul.social {
     position: absolute;
-    top: 64%;
-    right: 150px;
+    bottom: 4%;
+    right: 10%;
     list-style: none;
-    padding: 22px 0;
 }
 
 #hero-title-social>ul.social>li {
@@ -149,9 +150,8 @@ header>nav>a>img {
 }
 
 #hero-section>#hero-text {
-    padding: 50px;
-    margin-top: 50px;
-
+    padding: 3.125rem;
+    margin-top: 3rem;
 }
 
 #hero-section>#hero-text>h2 {
@@ -174,7 +174,7 @@ header>nav>a>img {
     max-width: 780px;
     font-size: 1.25rem;
     margin: 0 auto;
-    padding-bottom: 60px;
+    /* padding-bottom: 60px; */
     color: var(--color-tx-tertiary);
     font-family: var(--font-primary);
 }
@@ -293,6 +293,8 @@ header>nav>a>img {
 /* BOOKS SECTION */
 
 #books {
+    width: 100%;
+    position: relative;
     font-family: var(--font-primary);
 }
 
@@ -305,10 +307,11 @@ header>nav>a>img {
     text-align: center;
     color: var(--color-tx-primary);
     background-color: #be444b;
-    height: 500px;
-    padding: 20px;
-    overflow: hidden;
+    height: 30rem;
+    width: 100%;
+    padding: 20px 0;
     z-index: 1;
+    overflow: hidden;
 }
 
 .books-section p {
@@ -321,9 +324,9 @@ header>nav>a>img {
 .button-primary {
     background-color: var(--bg-primary);
     color: #be444b;
-    padding: 10px 18px;
+    padding: 0.4rem 2rem;
     border-radius: 60px;
-    font-size: 20px;
+    font-size: 1.4rem;
     text-decoration: none;
     cursor: pointer !important;
     z-index: 1;
@@ -332,21 +335,20 @@ header>nav>a>img {
 .books-section::before {
     content: "";
     position: absolute;
-    left: -60%;
-    width: 130%;
-    height: 400%;
-    background-image: url("../assets/img/bg-l.svg");
-    background-repeat: repeat;
-    background-size: 670px;
-    transform: rotate(10deg);
+    left: 8%;
+    width: 100%;
+    height: 140%;
+    background: url("../assets/img/bg-l.svg") repeat;
+    background-size: contain;
     opacity: 1;
-    z-index: 0;
-    animation: bg-scroll 50s linear infinite;
+    z-index: -1;
+    animation: bg-scroll 9s ease-out infinite;
 }
 
 /* tips and curiosities section */
 
 #tips-curiosities-section {
+    display: none;
     font-family: var(--font-primary);
     background-color: var(--bg-primary);
     padding: 20px;
@@ -408,6 +410,7 @@ header>nav>a>img {
 /* news letter */
 
 #news-letter-section {
+    position: relative;
     text-align: center;
     padding: 38px;
     width: 100%;
@@ -623,12 +626,282 @@ footer>.icon>ul>li>a>img {
 @keyframes bg-scroll {
 
     0% {
-        background-position: center 100%;
-        transform: rotate(300deg);
+        transform: translateY(27%);
     }
 
     100% {
-        background-position: center 100%;
-        transform: rotate(0deg);
+        transform: translateY(-99%);
     }
+
+}
+
+
+/* media query */
+
+/* mobile  */
+@media (max-width: 670px) {
+
+    /* nav */
+
+    #header-links-sx,
+    #header-links-dx {
+        display: none;
+    }
+
+    header>nav>a {
+        display: inline-block;
+        top: 0;
+        left: 30%;
+        height: 3rem;
+        width: 50%;
+        padding: 0;
+    }
+
+    header>nav>a img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    #hero-section {
+        margin-top: 3rem;
+    }
+
+    #hero-title-social {
+        background-position: center;
+        height: 50vh;
+    }
+
+    #hero-title-social>h1 {
+        font-size: 1.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    #hero-title-social>ul.social {
+        display: none;
+    }
+
+    #hero-section>#hero-text {
+        padding: 3rem;
+    }
+
+    #hero-section>#hero-text h2 {
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    #hero-section>#hero-text p {
+        font-size: 1.2rem;
+
+    }
+
+    /* recipes  */
+
+
+    .recipes-main-container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+
+    #recipes-section>.recipes-container h2 {
+        font-size: 2rem;
+        margin-top: 0;
+
+    }
+
+    .recipes-main-card {
+        width: 85%;
+        font-size: 1rem;
+    }
+
+    .recipes-main-card img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+    .recipes-main-card:nth-child(3) img {
+        margin-top: 0;
+    }
+
+    /* books */
+
+    .books-section p {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-size: 2.1rem;
+    }
+
+    .button-primary {
+        font-size: 1.2rem;
+
+    }
+
+    .books-section::before {
+        left: 0;
+        height: 100%;
+    }
+
+    .books-section::before {
+        left: 0;
+    }
+
+
+    /* news letter */
+
+    .news-letter-title {
+        font-size: 1.5rem;
+    }
+
+    #news-letter-section input[type="text"],
+    .form-section input {
+        width: 90%;
+
+    }
+
+    #news-letter-section .checkbox-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #news-letter-section .checkbox-input p {
+        padding: 0;
+    }
+
+    #news-letter-section .checkbox-input input {
+        align-self: baseline;
+    }
+
+    /* footer */
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer>div.links {
+        flex-direction: column;
+    }
+
+    footer>div.icon {
+        display: none;
+    }
+
+
+
+}
+
+@media (min-width: 670px) and (max-width: 1200px) {
+
+    /* nav */
+
+    #header-links-sx,
+    #header-links-dx {
+        display: none;
+    }
+
+    header>nav>a {
+        display: inline-block;
+        top: 0;
+        left: 30%;
+        height: 3rem;
+        width: 50%;
+        padding: 0;
+    }
+
+    header>nav>a img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    #hero-section {
+        margin-top: 3rem;
+    }
+
+    #hero-title-social {
+        background-position: center;
+        height: 50vh;
+    }
+
+    #hero-title-social>h1 {
+        font-size: 1.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    #hero-title-social>ul.social {
+        display: none;
+    }
+
+    #hero-section>#hero-text {
+        padding: 3rem;
+    }
+
+    #hero-section>#hero-text h2 {
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    #hero-section>#hero-text p {
+        font-size: 1.2rem;
+
+    }
+
+    /* recipes  */
+
+
+    .recipes-main-container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+
+    #recipes-section>.recipes-container h2 {
+        font-size: 2rem;
+        margin-top: 0;
+
+    }
+
+    .recipes-main-card {
+        width: 85%;
+        font-size: 1rem;
+    }
+
+    .recipes-main-card img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+    .recipes-main-card:nth-child(3) img {
+        margin-top: 0;
+    }
+
+    /* book */
+    .books-section::before {
+        left: -5%;
+    }
+
+
+    /* footer */
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer>div.links {
+        flex-direction: column;
+    }
+
+    footer>div.icon {
+        display: none;
+    }
+
 }
